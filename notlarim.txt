@@ -1,0 +1,144 @@
+Nelere ihtiyacım var sayfanın genel yapısında?
+1: Anasayfa:  Header > Navbar + Banner
+2: Öne Çıkanlar: 3 Cart ile en son eklenen makaleler yer alır görsel ve başlık bir de belki çok kısa açıklama ve tarih. 
+Bunu düzenli olarak son eklenen yazının oraya getireleceği güncellemeye göre ayarlanması gerekecek. 
+Başlangıçta sadece temel yapıyı hazırla, backend kısmını ilerleyen zamanla ekleyeceğim.
+3: Kategoriler - Bütün makalelerin kategoriler halinde genişletilebilir bir sayfa ile sunulması 
+4: Hakkında
+5: İletişim
+6: Footer
+
+VE özel olarak extra:
+1: Getirilen makalelerin yayınlanacağı başka bir sayfa target eklemeyi unutma.
+
+
+---
+
+## 💡 Sayfanın Genel Yapısı – Plan & Görevler
+
+---
+
+### 🔷 1. **Anasayfa (index.html)**
+
+#### ✨ Yapı:
+
+* `Header`
+
+  * Navbar (logo, linkler: Anasayfa, Kategoriler, Hakkında, İletişim)
+  * Banner (büyük bir görsel ve “Bezelye Prenses’e hoş geldin!” gibi bir mesaj)
+
+#### 🧩 Görev:
+
+* `header` ve `nav` oluştur
+* `images/` klasöründen banner görseli ekle
+* Tüm navbar linkleri şimdilik sayfa içi `href="#"` olabilir
+
+---
+
+### 🔷 2. **Öne Çıkanlar (Son Eklenen 3 Makale)**
+
+#### ✨ Yapı:
+
+* `section.featured-posts`
+* 3 adet kart (görsel, başlık, kısa açıklama, tarih)
+* Şimdilik statik olarak elle eklenecek, ileride `JSON` üzerinden backend bağlanacak
+* Her karta `target="_blank"` ile `article.html` yönlendirmesi yapılacak
+
+#### 🧩 Görev:
+
+* `section` içinde `div.card` olarak 3 kart oluştur
+* Her kart için örnek bir yazı, resim ve yönlendirme koy
+
+---
+
+### 🔷 3. **Kategoriler Sayfası (blog.html)**
+
+#### ✨ Yapı:
+
+* Her makale belirli bir kategoriye ait olacak
+* Kategoriler buton şeklinde üstte yer alır
+* Altında, seçilen kategoriye göre filtrelenen yazılar görünür (şimdilik statik)
+
+#### 🧩 Görev:
+
+* Kategori butonlarını (ör: Bakım, Yaşam, İlham) HTML’de yerleştir
+* Altına örnek yazı kartları yerleştir
+
+---
+
+### 🔷 4. **Hakkında Sayfası (about.html)**
+
+#### ✨ Yapı:
+
+* "Bezelye Prenses kimdir?", yayın amacı, ilham aldığı kadınlar, podcast fikri
+* Fotoğraf + kısa biyografi tarzı
+
+#### 🧩 Görev:
+
+* Temel içerik, başlık ve paragraf ile bu sayfayı oluştur
+
+---
+
+### 🔷 5. **İletişim Sayfası (contact.html ya da about.html içinde ayrı section)**
+
+#### ✨ Yapı:
+
+* Ad, e-posta, mesaj alanı
+* Şimdilik form statik olacak (ileride backend entegre edilecek)
+
+#### 🧩 Görev:
+
+* HTML form yapısı oluştur
+* Form alanlarına etiket (`label`) eklemeyi unutma
+
+---
+
+### 🔷 6. **Footer (Tüm Sayfalarda Ortak Kullanılacak)**
+
+#### ✨ Yapı:
+
+* Telif hakkı (© 2025 Bezelye Prenses)
+* Küçük sosyal medya ikonları
+* Reklam alanı (örneğin bir banner görsel veya metin reklam)
+
+#### 🧩 Görev:
+
+* `footer` tagi altında bu bilgileri ekle
+* Şimdilik sosyal medya ikonları için placeholder kullan
+
+---
+
+## 🟨 Ekstra – Her Yazı İçin `article.html` (Tekil Makale Sayfası)
+
+Her blog kartına tıklandığında gelen sayfa bu olacak.
+
+#### ✨ Yapı:
+
+* Başlık
+* Yayın tarihi
+* Öne çıkan görsel
+* Yazı içeriği
+* Geri dön / başka yazılara git butonları
+* `target="_blank"` ile açılabilir yapılacak
+
+#### 🧩 Görev:
+
+* Örnek 1 yazı için article.html sayfası oluştur ve `card > a` etiketine bağla
+
+---
+
+## ✅ Genel Dosya Görev Listesi:
+
+| Dosya                      | İçerik ve Yapılacaklar                                     |
+| -------------------------- | ---------------------------------------------------------- |
+| `index.html`               | Header, Navbar, Banner, 3 Makale Kartı, Footer             |
+| `blog.html`                | Kategoriler, kategoriye göre filtrelenmiş yazı kartları    |
+| `article.html`             | Tekil makale sayfası (statik yazı + görsel)                |
+| `about.html`               | Kişisel hikaye, amacın, kim olduğun, hedef kitlen          |
+| `contact.html` (opsiyonel) | Form alanları, e-posta / mesaj gönderimi                   |
+| `style.css`                | Temel stiller, kart tasarımı, responsive yapı              |
+| `script.js`                | (isteğe bağlı) Menü tıklamaları, slider, filtre sistemleri |
+| `ads.txt`                  | Google AdSense gibi reklam sistemleri için                 |
+
+---
+
